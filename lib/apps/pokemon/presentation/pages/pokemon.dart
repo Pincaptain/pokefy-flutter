@@ -8,6 +8,12 @@ class PokemonPage extends StatefulWidget {
 class PokemonPageState extends State<PokemonPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pokefy'),
+        centerTitle: true,
+      ),
+      body: Container(),
+    );
   }
 }
