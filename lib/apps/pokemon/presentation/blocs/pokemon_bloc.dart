@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:poekfy/apps/pokemon/data/providers/pokemon_provider.dart';
 
 import 'package:poekfy/apps/pokemon/domain/entities/pokemon.dart';
@@ -32,9 +33,7 @@ class PokemonLoadedState extends PokemonState {
   final List<Pokemon> pokemon;
 
   @override
-  List<Object> get props => [
-        pokemon,
-      ];
+  List<Object> get props => [pokemon];
 }
 
 class PokemonErrorState extends PokemonState {
@@ -46,6 +45,7 @@ class PokemonErrorState extends PokemonState {
   List<Object> get props => [error];
 }
 
+@injectable
 class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
   PokemonBloc(this.pokemonRepository) : super(PokemonInitialState());
 

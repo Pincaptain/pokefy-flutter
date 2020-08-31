@@ -13,7 +13,9 @@ abstract class IPokemonProvider {
 
 @Injectable(as: IPokemonProvider)
 class PokemonProvider implements IPokemonProvider {
-  final String provider = "http://127.0.0.1:8000";
+  // If you want to rebuild change this ip
+  // to your local ip address
+  final String provider = "http://0.0.0.0";
 
   @override
   Future<List<PokemonModel>> getPokemon() async {
